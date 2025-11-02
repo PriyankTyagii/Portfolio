@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NEXT_SKIP_LIGHTNINGCSS=1 next build",
     "start": "next start",
-    "postinstall": "next build",
+    "postinstall": "NEXT_SKIP_LIGHTNINGCSS=1 next build",
     "lint": "eslint ."
   },
   "engines": {
