@@ -5,7 +5,7 @@ const CODE_LINES = [
   { n: "1",  c: `<span class="pt-kw">const</span> <span class="pt-fn">priyank</span> <span class="pt-pu">=</span> <span class="pt-pu">{</span>` },
   { n: "2",  c: `&nbsp;&nbsp;<span class="pt-key">name</span><span class="pt-pu">:</span> <span class="pt-str">"Priyank Tyagi"</span><span class="pt-pu">,</span>` },
   { n: "3",  c: `&nbsp;&nbsp;<span class="pt-key">role</span><span class="pt-pu">:</span> <span class="pt-str">"Full Stack + AI Engineer"</span><span class="pt-pu">,</span>` },
-  { n: "4",  c: `&nbsp;&nbsp;<span class="pt-key">university</span><span class="pt-pu">:</span> <span class="pt-str">"CER, Roorkee"</span><span class="pt-pu">,</span>` },
+  { n: "4",  c: `&nbsp;&nbsp;<span class="pt-key">university</span><span class="pt-pu">:</span> <span class="pt-str">"COER, Roorkee"</span><span class="pt-pu">,</span>` },
   { n: "5",  c: `&nbsp;&nbsp;<span class="pt-key">hackathons</span><span class="pt-pu">:</span> <span class="pt-val">10</span><span class="pt-pu">,</span>` },
   { n: "6",  c: `&nbsp;&nbsp;<span class="pt-key">patents</span><span class="pt-pu">:</span> <span class="pt-val">2</span><span class="pt-pu">,</span>` },
   { n: "7",  c: `&nbsp;&nbsp;<span class="pt-key">stack</span><span class="pt-pu">:</span> <span class="pt-pu">[</span><span class="pt-str">"Next.js"</span><span class="pt-pu">,</span> <span class="pt-str">"FastAPI"</span><span class="pt-pu">,</span> <span class="pt-str">"LangChain"</span><span class="pt-pu">],</span>` },
