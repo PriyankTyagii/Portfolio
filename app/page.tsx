@@ -1,30 +1,27 @@
-import Cursor from "@/components/portfolio/Cursor"
 import Navbar from "@/components/portfolio/Navbar"
 import Hero from "@/components/portfolio/Hero"
+import About from "@/components/portfolio/About"
+import Projects from "@/components/portfolio/Projects"
+import Experience from "@/components/portfolio/Experience"
+import Skills from "@/components/portfolio/Skills"
+import Achievements from "@/components/portfolio/Achievements"
 import Contact from "@/components/portfolio/Contact"
-import { Stats, Marquee, Projects, Experience, Skills, Achievements } from "@/components/portfolio/Sections"
 
 export default function Home() {
   return (
     <>
-      <div className="noise" aria-hidden />
-      <Cursor />
       <Navbar />
       <main>
         <Hero />
-        <Stats />
-        <Marquee />
+        <About />
         <Projects />
         <Experience />
         <Skills />
         <Achievements />
         <Contact />
       </main>
-      <footer className="footer">
-        <div className="footer-glow" aria-hidden />
-        <span>
-          Crafted by Priyank Tyagi · {new Date().getFullYear()} · Next.js · Three.js · Vercel
-        </span>
+      <footer className="site-footer">
+        <p>Crafted by Priyank Tyagi · {new Date().getFullYear()}</p>
       </footer>
     </>
   )

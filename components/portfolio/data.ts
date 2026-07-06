@@ -15,6 +15,17 @@ export const STATS = [
 export const PROJECTS = [
   {
     index: "01",
+    name: "AI Customer Support System",
+    tagline: "Agentic AI backend with real-world e-commerce simulation",
+    desc: "An agentic AI backend integrated with a clean React frontend, built around real-world engineering concerns: authentication, per-user data isolation, multi-agent orchestration, and database-backed tools. Agents interact with real data (orders, invoices, refunds) via live streaming UX.",
+    tags: ["Agentic AI", "Next.js", "React", "LLMs"],
+    link: "https://ai-powered-customer-support-system-sigma.vercel.app/",
+    github: "https://github.com/PriyankTyagii/AI-powered-customer-support-system",
+    status: "Live · Vercel",
+    accent: "#10b981",
+  },
+  {
+    index: "02",
     name: "Fashion Visual Search AI",
     tagline: "Visual similarity engine for fashion discovery",
     desc: "Indexes 17K+ fashion items with ResNet50 embeddings stored in ChromaDB. Hits 0.85 precision@10 and doubled user engagement in testing.",
@@ -24,7 +35,7 @@ export const PROJECTS = [
     accent: "#c084fc",
   },
   {
-    index: "02",
+    index: "03",
     name: "ComponentForge",
     tagline: "Plain English → production Angular components",
     desc: "AI component generator that turns natural language into production-ready TypeScript + HTML + SCSS in under 5 seconds, with design-system enforcement and self-correction loops.",
@@ -34,7 +45,7 @@ export const PROJECTS = [
     accent: "#22d3ee",
   },
   {
-    index: "03",
+    index: "04",
     name: "Events Platform",
     tagline: "Full-stack event discovery with an AI assistant",
     desc: "Multi-source scraping every 6 hours via Vercel Cron, a Phi-3 powered assistant, Firestore persistence, and a Google OAuth admin panel.",
@@ -44,7 +55,7 @@ export const PROJECTS = [
     accent: "#fbbf24",
   },
   {
-    index: "04",
+    index: "05",
     name: "ZedBlock",
     tagline: "Blockchain on bare-metal FPGA",
     desc: "Blockchain node on a Xilinx ZedBoard (Zynq-7000 SoC) with hardware-accelerated AES-CBC + SHA-256 — 2× the throughput of the software path, driven over a UART CLI.",

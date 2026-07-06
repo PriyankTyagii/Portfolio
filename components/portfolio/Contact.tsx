@@ -28,38 +28,31 @@ export default function Contact() {
   }
 
   return (
-    <section className="section contact" id="contact">
+    <section className="section" id="contact">
       <div className="contact-grid">
         <div>
           <Reveal>
-            <div className="kicker">
-              <span className="kicker-line" /> Get in Touch
-            </div>
-          </Reveal>
-          <Reveal delay={0.08}>
             <h2 className="contact-title">
-              Let&apos;s build
-              <br />
-              something
-              <br />
-              <span className="text-aurora">great.</span>
+              Let&apos;s build <br />
+              something <br />
+              <span className="contact-title-muted">great.</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.16}>
-            <p className="sec-intro" style={{ margin: "0 0 2rem" }}>
-              Open to full-time roles, internships, freelance projects, and research collabs.
-              Usually respond the same day.
+          <Reveal delay={0.1}>
+            <p className="sec-intro" style={{ maxWidth: 400, marginBottom: "2rem" }}>
+              Open to full-time roles, internships, freelance projects, and research
+              collabs. I usually respond within the same day.
             </p>
           </Reveal>
-          <Reveal delay={0.22}>
+          <Reveal delay={0.2}>
             <Magnetic>
-              <a href={`mailto:${EMAIL}`} className="btn btn-primary">
+              <a href={`mailto:${EMAIL}`} className="contact-email">
                 {EMAIL}
               </a>
             </Magnetic>
-            <div className="contact-socials">
+            <div className="contact-social-links">
               {SOCIALS.filter((s) => !s.href.startsWith("mailto")).map((s) => (
-                <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="contact-soc-link">
+                <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="contact-social-link">
                   <span aria-hidden>↗</span> {s.label}
                 </a>
               ))}
@@ -67,44 +60,47 @@ export default function Contact() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.15} y={48}>
-          <div className="contact-card">
-            <div className="kicker" style={{ marginBottom: "1.5rem" }}>
-              <span className="kicker-line" /> Send a Message
-            </div>
+        <Reveal delay={0.15}>
+          <div className="contact-form-card">
+            <h3>Send a Message</h3>
+
             {status === "success" ? (
+              // @ts-expect-error React 19 types clash with framer-motion
               <motion.div className="form-success" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}>
                 <span aria-hidden>✓</span> Message sent! I&apos;ll get back to you soon.
               </motion.div>
             ) : (
-              <form className="form" onSubmit={handleSubmit}>
-                <div className="field">
-                  <label htmlFor="c-name">Name</label>
+              <form className="form-stack" onSubmit={handleSubmit}>
+                <div className="field-group">
+                  <label htmlFor="c-name" className="field-label">Name</label>
                   <input
                     id="c-name"
                     type="text"
+                    className="field-input"
                     placeholder="Your name"
                     required
                     value={form.name}
                     onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                   />
                 </div>
-                <div className="field">
-                  <label htmlFor="c-email">Email</label>
+                <div className="field-group">
+                  <label htmlFor="c-email" className="field-label">Email</label>
                   <input
                     id="c-email"
                     type="email"
+                    className="field-input"
                     placeholder="you@example.com"
                     required
                     value={form.email}
                     onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                   />
                 </div>
-                <div className="field">
-                  <label htmlFor="c-msg">Message</label>
+                <div className="field-group">
+                  <label htmlFor="c-msg" className="field-label">Message</label>
                   <textarea
                     id="c-msg"
-                    rows={5}
+                    rows={4}
+                    className="field-input"
                     placeholder="What would you like to discuss?"
                     required
                     value={form.message}
@@ -117,7 +113,7 @@ export default function Contact() {
                   </div>
                 )}
                 <button type="submit" className="btn btn-primary btn-block" disabled={status === "sending"}>
-                  {status === "sending" ? "Sending…" : "Send Message →"}
+                  {status === "sending" ? "Sending…" : "Send Message"}
                 </button>
               </form>
             )}
