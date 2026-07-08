@@ -5,63 +5,92 @@ export const SOCIALS = [
   { label: "Email", href: "mailto:priyanktyagi404@gmail.com", short: "@" },
 ]
 
-export const STATS = [
-  { value: 10, suffix: "+", label: "Hackathon Wins" },
-  { value: 2, suffix: "", label: "Patents Filed" },
-  { value: 5, suffix: "+", label: "Live Products" },
-  { value: 7, suffix: "+", label: "Projects Shipped" },
+export const PROFILE = {
+  name: "Priyank Tyagi",
+  role: "Full-Stack & AI Engineer",
+  location: "Roorkee, India",
+  pronouns: "he/him",
+  avatar: "https://github.com/PriyankTyagii.png",
+  bio: "I build production web apps and the AI systems behind them — LLM agents, RAG pipelines, and backends that hold up under real traffic. Currently shipping full-stack + AI products end to end: from typed Next.js frontends to FastAPI services, vector search, and cloud deploys.",
+}
+
+export const PROFILE_STATS = [
+  { label: "10+ hackathon wins", color: "#c084fc" },
+  { label: "2 patents filed", color: "#22d3ee" },
+  { label: "5+ products live", color: "#34d399" },
+]
+
+/* Tinted chips — color per tech */
+export const TECH_STACK = [
+  { name: "TypeScript", color: "#60a5fa" },
+  { name: "Python", color: "#facc15" },
+  { name: "Next.js", color: "#f4f4f5" },
+  { name: "React", color: "#22d3ee" },
+  { name: "FastAPI", color: "#34d399" },
+  { name: "Node.js", color: "#4ade80" },
+  { name: "LangChain", color: "#c084fc" },
+  { name: "RAG / Vector DBs", color: "#f472b6" },
+  { name: "OpenAI API", color: "#38bdf8" },
+  { name: "HuggingFace", color: "#facc15" },
+  { name: "PyTorch", color: "#fb923c" },
+  { name: "TensorFlow", color: "#fb923c" },
+  { name: "PostgreSQL", color: "#60a5fa" },
+  { name: "MongoDB", color: "#4ade80" },
+  { name: "Redis", color: "#f87171" },
+  { name: "Firebase", color: "#facc15" },
+  { name: "Docker", color: "#38bdf8" },
+  { name: "Kubernetes", color: "#60a5fa" },
+  { name: "AWS", color: "#fb923c" },
+  { name: "GCP", color: "#34d399" },
+  { name: "GitHub Actions", color: "#a1a1aa" },
+  { name: "Tailwind CSS", color: "#22d3ee" },
 ]
 
 export const PROJECTS = [
   {
     index: "01",
     name: "AI Customer Support System",
-    tagline: "Agentic AI backend with real-world e-commerce simulation",
-    desc: "An agentic AI backend integrated with a clean React frontend, built around real-world engineering concerns: authentication, per-user data isolation, multi-agent orchestration, and database-backed tools. Agents interact with real data (orders, invoices, refunds) via live streaming UX.",
+    desc: "Agentic AI backend with a clean React frontend — multi-agent orchestration, per-user data isolation, auth, and database-backed tools. Agents act on real orders, invoices, and refunds with live streaming UX.",
     tags: ["Agentic AI", "Next.js", "React", "LLMs"],
     link: "https://ai-powered-customer-support-system-sigma.vercel.app/",
     github: "https://github.com/PriyankTyagii/AI-powered-customer-support-system",
-    status: "Live · Vercel",
-    accent: "#10b981",
+    status: "Live",
+    accent: "#34d399",
   },
   {
     index: "02",
     name: "Fashion Visual Search AI",
-    tagline: "Visual similarity engine for fashion discovery",
-    desc: "Indexes 17K+ fashion items with ResNet50 embeddings stored in ChromaDB. Hits 0.85 precision@10 and doubled user engagement in testing.",
-    tags: ["TensorFlow", "ResNet50", "ChromaDB", "Streamlit", "Python"],
+    desc: "Visual similarity engine indexing 17K+ fashion items with ResNet50 embeddings in ChromaDB. 0.85 precision@10; doubled user engagement in testing.",
+    tags: ["TensorFlow", "ResNet50", "ChromaDB", "Streamlit"],
     link: "https://fashion-visual-search-intelligent-styling-assistant-priyank.streamlit.app/",
-    status: "Live · Streamlit Cloud",
+    status: "Live",
     accent: "#c084fc",
   },
   {
     index: "03",
     name: "ComponentForge",
-    tagline: "Plain English → production Angular components",
-    desc: "AI component generator that turns natural language into production-ready TypeScript + HTML + SCSS in under 5 seconds, with design-system enforcement and self-correction loops.",
-    tags: ["Groq", "Llama 3.3", "Next.js", "TypeScript", "Python"],
+    desc: "Plain English → production Angular components. Generates TypeScript + HTML + SCSS in under 5 seconds with design-system enforcement and self-correction loops.",
+    tags: ["Groq", "Llama 3.3", "Next.js", "TypeScript"],
     link: "https://component-forge-beige.vercel.app",
-    status: "Live · Vercel",
+    status: "Live",
     accent: "#22d3ee",
   },
   {
     index: "04",
     name: "Events Platform",
-    tagline: "Full-stack event discovery with an AI assistant",
-    desc: "Multi-source scraping every 6 hours via Vercel Cron, a Phi-3 powered assistant, Firestore persistence, and a Google OAuth admin panel.",
+    desc: "Full-stack event discovery: multi-source scraping on Vercel Cron every 6 hours, a Phi-3 powered assistant, Firestore persistence, and a Google OAuth admin panel.",
     tags: ["Next.js", "Firebase", "HuggingFace", "TypeScript"],
     link: "https://events-platform-ruddy.vercel.app/",
-    status: "Live · Full Stack",
-    accent: "#fbbf24",
+    status: "Live",
+    accent: "#facc15",
   },
   {
     index: "05",
     name: "ZedBlock",
-    tagline: "Blockchain on bare-metal FPGA",
-    desc: "Blockchain node on a Xilinx ZedBoard (Zynq-7000 SoC) with hardware-accelerated AES-CBC + SHA-256 — 2× the throughput of the software path, driven over a UART CLI.",
-    tags: ["C", "Vitis", "Vivado", "FPGA", "AES-CBC"],
+    desc: "Blockchain node with hardware-accelerated AES-CBC + SHA-256 on a Zynq-7000 SoC — 2× the throughput of the software path. Proof I can go as low-level as the problem demands.",
+    tags: ["C", "FPGA", "Cryptography"],
     link: "https://github.com/PriyankTyagii",
-    status: "Hardware · FPGA",
+    status: "Research",
     accent: "#f87171",
   },
 ]
@@ -70,64 +99,70 @@ export const EXPERIENCE = [
   {
     role: "Full Stack Developer",
     company: "AgroLogi Technologies",
+    location: "Remote",
     period: "Sept 2025 — Feb 2026",
     points: [
-      "FastAPI + Firebase + ResNet50 pipeline processing 10K+ crop images/day — +25% accuracy, −35% latency.",
-      "Multi-tenant SaaS with RBAC & i18n, scaled to 5K+ concurrent users with −40% API latency.",
-      "CI/CD via GitHub Actions + Docker — deployment time cut by 60%.",
+      "Built a FastAPI + Firebase + ResNet50 pipeline processing 10K+ crop images/day — +25% accuracy, −35% latency.",
+      "Scaled a multi-tenant SaaS with RBAC & i18n to 5K+ concurrent users while cutting API latency 40%.",
+      "Set up CI/CD with GitHub Actions + Docker — deployment time down 60%.",
     ],
   },
   {
     role: "Research Intern",
     company: "IIT Roorkee",
+    location: "On-site",
     period: "Apr 2025 — Sept 2025",
     points: [
-      "AI-powered blockchain consensus with ML validator selection — +30% throughput, −20% latency.",
-      "Hardware-accelerated SHA-256/AES on Xilinx ZedBoard FPGA — 2× performance uplift.",
+      "Built an AI-powered blockchain consensus layer with ML-based validator selection — +30% throughput, −20% latency.",
+      "Accelerated the cryptography path (SHA-256/AES) 2× as part of the research prototype.",
     ],
   },
   {
     role: "AI & Cloud Intern",
     company: "Edunet Foundation · IBM SkillsBuild",
+    location: "Remote",
     period: "July — Aug 2024",
     points: [
-      "ML pipelines on IBM Cloud — 10K+ samples at 92% accuracy, −35% training time.",
-      "Production LLM chatbot with prompt optimization & caching — −25% cloud costs.",
+      "Built ML pipelines on IBM Cloud — 10K+ samples at 92% accuracy, −35% training time.",
+      "Shipped a production LLM chatbot with prompt optimization & caching — −25% cloud costs.",
     ],
   },
   {
     role: "B.Tech Information Technology",
     company: "College of Engineering Roorkee",
+    location: "Roorkee",
     period: "Expected May 2026",
     points: [
-      "CGPA 7.8 / 10.",
-      "Coursework: DSA, OS, DBMS, Computer Networks, Machine Learning.",
+      "CGPA 7.8 / 10 — coursework in DSA, OS, DBMS, Computer Networks, Machine Learning.",
     ],
   },
 ]
 
-export const SKILLS = [
-  { group: "Languages", items: ["Python", "TypeScript", "JavaScript", "C++", "SQL", "C"] },
-  { group: "Frontend", items: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Three.js", "Streamlit"] },
-  { group: "Backend", items: ["FastAPI", "Node.js", "REST APIs", "Microservices", "Firebase"] },
-  { group: "AI / ML", items: ["LangChain", "LlamaIndex", "RAG", "TensorFlow", "PyTorch", "OpenAI", "HuggingFace"] },
-  { group: "Databases", items: ["PostgreSQL", "MongoDB", "Redis", "Firestore", "FAISS", "ChromaDB", "Pinecone"] },
-  { group: "Cloud / DevOps", items: ["AWS", "GCP", "Docker", "Kubernetes", "GitHub Actions", "CI/CD", "Vercel"] },
+export const WINS = [
+  { icon: "🏆", title: "IIT InnoWave", desc: "Winner — national innovation competition at IIT for an AI-powered solution." },
+  { icon: "🎯", title: "10+ Hackathon Wins", desc: "National & international — incl. 2nd place AlgoVerse (Microsoft × HackWithIndia)." },
+  { icon: "📜", title: "2 Patents Filed", desc: "AI and IoT innovations under review at the Indian Patent Office." },
+  { icon: "🌟", title: "Google Gemini Ambassador", desc: "Top 0.003% of 30,000+ applicants as Campus Ambassador." },
+  { icon: "☁️", title: "GCP Arcade Champion", desc: "Top performer in Google Cloud competitive skill challenges." },
 ]
 
-export const MARQUEE = [
-  "Next.js", "FastAPI", "LangChain", "Three.js", "PyTorch", "TypeScript",
-  "Docker", "Kubernetes", "PostgreSQL", "RAG", "TensorFlow", "AWS", "GCP", "Redis",
+export const CERTIFICATIONS = [
+  { name: "Artificial Intelligence Fundamentals", issuer: "IBM", year: "2024" },
+  { name: "Enterprise-grade AI", issuer: "IBM", year: "2024" },
+  { name: "CCNAv7: Introduction to Networks", issuer: "Cisco", year: "2023" },
+  { name: "Linux Essentials", issuer: "Cisco", year: "2023" },
+  { name: "Python Essentials 1", issuer: "Cisco", year: "2024" },
+  { name: "Geoprocessing using Python", issuer: "ISRO", year: "2023" },
+  { name: "Postman API Student Expert", issuer: "Postman", year: "2024" },
+  { name: "Intro to NLP", issuer: "Infosys Springboard", year: "2024" },
+  { name: "Computer Vision 101", issuer: "Infosys Springboard", year: "2024" },
+  { name: "Data Science with Python", issuer: "LetsUpgrade", year: "2024" },
+  { name: "Data Viz & Warehousing Master Course", issuer: "Udemy", year: "2024" },
 ]
 
-export const ACHIEVEMENTS = [
-  { icon: "🏆", title: "IIT InnoWave Winner", desc: "Top prize at a national innovation competition at IIT for an AI-powered solution." },
-  { icon: "🎯", title: "10+ Hackathon Wins", desc: "National and international competitions — consistently ranked among top solutions." },
-  { icon: "📜", title: "2 Patents Filed", desc: "AI and IoT innovations filed and under review at the Indian Patent Office." },
-  { icon: "☁️", title: "GCP Arcade Champion", desc: "Top performer in Google Cloud Platform competitive skill challenges." },
-  { icon: "🌟", title: "Google Gemini Ambassador", desc: "Selected in the top 0.003% from 30,000+ applicants as Campus Ambassador." },
-  { icon: "🔬", title: "IIT Roorkee Research", desc: "AI × Blockchain research — hardware-accelerated cryptography on Xilinx FPGA." },
-]
+export const LINKEDIN_CERTS_URL =
+  "https://www.linkedin.com/in/priyank-tyagi-3a3a10259/details/certifications/"
 
 export const EMAIL = "priyanktyagi404@gmail.com"
+export const SITE = "priyanktyagi.vercel.app"
 export const FORMSPREE = "https://formspree.io/f/mjkpjnqp"

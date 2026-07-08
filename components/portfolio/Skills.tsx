@@ -1,36 +1,27 @@
 "use client"
 
 import { Reveal } from "./ui"
-import { SKILLS } from "./data"
+import { TECH_STACK } from "./data"
 
 export default function Skills() {
   return (
-    <div className="section-alt">
-      <section className="section" id="skills">
-        <div className="sec-head">
-          <Reveal>
-            <h2 className="sec-title">Technical Arsenal</h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="sec-intro">Tools and technologies I use to build scalable systems.</p>
-          </Reveal>
-        </div>
-
-        <div className="skills-grid">
-          {SKILLS.map((g, i) => (
-            <Reveal key={g.group} delay={(i % 3) * 0.1}>
-              <div className="skill-card">
-                <h3 className="skill-group-title">{g.group}</h3>
-                <div className="skill-tags">
-                  {g.items.map((s) => (
-                    <span key={s} className="skill-tag">{s}</span>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
+    <section className="section" id="stack">
+      <Reveal y={18}>
+        <h2 className="sec-title">Tech Stack</h2>
+      </Reveal>
+      <Reveal y={18} delay={0.08}>
+        <div className="chips">
+          {TECH_STACK.map((t) => (
+            <span
+              key={t.name}
+              className="chip"
+              style={{ "--chip": t.color } as React.CSSProperties}
+            >
+              {t.name}
+            </span>
           ))}
         </div>
-      </section>
-    </div>
+      </Reveal>
+    </section>
   )
 }

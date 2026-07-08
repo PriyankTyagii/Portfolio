@@ -1,13 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
 
 const jetbrains = JetBrains_Mono({
   subsets: ['latin'],
@@ -18,13 +12,17 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Priyank Tyagi — Full-Stack & AI Engineer',
   description:
-    'Portfolio of Priyank Tyagi — full-stack developer and AI/ML engineer. IIT InnoWave winner, 10+ hackathon wins, 2 patents filed.',
+    'Portfolio of Priyank Tyagi — full-stack & AI engineer. Production web apps, LLM agents, RAG pipelines. 10+ hackathon wins, 2 patents filed.',
   generator: 'Next.js',
   openGraph: {
     title: 'Priyank Tyagi — Full-Stack & AI Engineer',
-    description: 'Building scalable, AI-integrated platforms. Explore projects, experience, and wins.',
+    description: 'Production web apps, LLM agents, and RAG pipelines. Explore projects, experience, and wins.',
     type: 'website',
   },
+}
+
+export const viewport = {
+  themeColor: '#09090b',
 }
 
 export default function RootLayout({
@@ -32,7 +30,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${jetbrains.variable}`}>
+      <body className={jetbrains.variable}>
         {children}
         <Analytics />
       </body>

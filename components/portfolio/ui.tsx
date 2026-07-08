@@ -1,7 +1,70 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { motion, useInView, useMotionValue, useSpring, useTransform, animate } from "framer-motion"
+import { motion, useInView, useMotionValue, useScroll, useSpring, useTransform, animate } from "framer-motion"
+
+/* ---------- Scroll-linked parallax wrapper ---------- */
+export function Parallax({
+  children,
+  speed = 60,
+  className,
+}: {
+  children?: React.ReactNode
+  speed?: number
+  className?: string
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] })
+  const y = useTransform(scrollYProgress, [0, 1], [speed, -speed])
+  return (
+    <motion.div ref={ref} className={className} style={{ y }}>
+      {children}
+    </motion.div>
+  )
+}
+
+/* ---------- Mouse-follow glow (sets --mx/--my CSS vars) ---------- */
+export function GlowCard({
+  children,
+  className,
+  style,
+}: {
+  children: React.ReactNode
+  className?: string
+  style?: React.CSSProperties
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+  return (
+    <div
+      ref={ref}
+      className={className}
+      style={style}
+      onMouseMove={(e) => {
+        const r = ref.current!.getBoundingClientRect()
+        ref.current!.style.setProperty("--mx", `${((e.clientX - r.left) / r.width) * 100}%`)
+        ref.current!.style.setProperty("--my", `${((e.clientY - r.top) / r.height) * 100}%`)
+      }}
+    >
+      {children}
+    </div>
+  )
+}
+
+/* ---------- Highlight numbers / metrics inside a sentence ---------- */
+export function Metrics({ text }: { text: string }) {
+  const parts = text.split(/([+−-]?\d[\d.,]*\s?(?:%|×|x\b|K\+|K\b)?\+?)/g)
+  return (
+    <>
+      {parts.map((p, i) =>
+        /\d/.test(p) ? (
+          <span key={i} className="metric">{p}</span>
+        ) : (
+          <span key={i}>{p}</span>
+        )
+      )}
+    </>
+  )
+}
 
 /* ---------- Scroll reveal with stagger ---------- */
 export function Reveal({

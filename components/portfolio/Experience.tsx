@@ -1,33 +1,33 @@
 "use client"
 
-import { Reveal } from "./ui"
+import { Reveal, Metrics } from "./ui"
 import { EXPERIENCE } from "./data"
 
 export default function Experience() {
   return (
     <section className="section" id="experience">
-      <div className="sec-head">
-        <Reveal>
-          <h2 className="sec-title">Career Experience</h2>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <p className="sec-intro">Where I&apos;ve built systems and created impact.</p>
-        </Reveal>
-      </div>
+      <Reveal y={18}>
+        <h2 className="sec-title">Experience</h2>
+      </Reveal>
 
-      <div className="experience-list">
-        {EXPERIENCE.map((e) => (
-          <Reveal key={e.company} delay={0.1}>
-            <div className="experience-item">
-              <div className="exp-meta">
+      <div className="exp-list">
+        {EXPERIENCE.map((e, i) => (
+          <Reveal key={e.company} y={20} delay={0.05 * (i % 2)}>
+            <div className="exp-item">
+              <div className="exp-head">
+                <span className="exp-role">{e.role}</span>
                 <span className="exp-period">{e.period}</span>
-                <h3 className="exp-role">{e.role}</h3>
-                <div className="exp-company">{e.company}</div>
               </div>
-
+              <div className="exp-company">
+                {e.company}
+                <span className="dot">•</span>
+                {e.location}
+              </div>
               <ul className="exp-points">
                 {e.points.map((pt, j) => (
-                  <li key={j}>{pt}</li>
+                  <li key={j}>
+                    <span><Metrics text={pt} /></span>
+                  </li>
                 ))}
               </ul>
             </div>

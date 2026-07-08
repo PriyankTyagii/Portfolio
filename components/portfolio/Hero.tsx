@@ -1,53 +1,79 @@
 "use client"
 
 import { Reveal } from "./ui"
-import { SOCIALS } from "./data"
+import { PROFILE, PROFILE_STATS, SOCIALS, EMAIL, SITE } from "./data"
 
 export default function Hero() {
   return (
-    <section className="hero" id="top">
-      <div className="hero-content">
-        <Reveal>
-          <div className="hero-badge">
-            <span className="hero-badge-dot" />
-            Available for new opportunities
+    <section className="profile" id="top">
+      <Reveal y={20}>
+        <div className="profile-top">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={PROFILE.avatar} alt={PROFILE.name} className="avatar" />
+          <div className="profile-id">
+            <div className="available">
+              <span className="available-dot" />
+              Available for work
+            </div>
+            <h1 className="profile-name">{PROFILE.name}</h1>
+            <div className="profile-role">{PROFILE.role}</div>
           </div>
-        </Reveal>
+        </div>
+      </Reveal>
 
-        <Reveal delay={0.1}>
-          <h1 className="hero-title">
-            Building software that{" "}
-            <span className="hero-title-muted">scales&nbsp;&amp;&nbsp;performs.</span>
-          </h1>
-        </Reveal>
+      <Reveal y={16} delay={0.08}>
+        <div className="profile-meta">
+          <div className="profile-meta-row">
+            <span className="key" aria-hidden>◆</span> {PROFILE.location} · {PROFILE.pronouns}
+          </div>
+          <div className="profile-meta-row">
+            <span className="key" aria-hidden>@</span>
+            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          </div>
+          <div className="profile-meta-row">
+            <span className="key" aria-hidden>↗</span>
+            <a href="/" aria-label="Website">{SITE}</a>
+          </div>
+        </div>
+      </Reveal>
 
-        <Reveal delay={0.2}>
-          <p className="hero-desc">
-            I&apos;m <strong>Priyank Tyagi</strong>, a Full-Stack &amp; AI Engineer.
-            I specialize in building production-ready web applications, integrating
-            LLMs, and architecting scalable backend systems.
-          </p>
-        </Reveal>
+      <Reveal y={16} delay={0.16}>
+        <p className="profile-bio">
+          {PROFILE.bio}
+        </p>
+      </Reveal>
 
-        <Reveal delay={0.3}>
-          <div className="hero-actions">
-            <a href="#work" className="btn btn-primary">View My Work</a>
-            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
-              Resume
+      <Reveal y={16} delay={0.24}>
+        <div className="profile-stats">
+          {PROFILE_STATS.map((s) => (
+            <span
+              key={s.label}
+              className="pstat"
+              style={{
+                color: s.color,
+                borderColor: `${s.color}38`,
+                background: `${s.color}12`,
+              }}
+            >
+              {s.label}
+            </span>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal y={16} delay={0.32}>
+        <div className="profile-actions">
+          <a href="/resume.pdf" target="_blank" rel="noreferrer" className="btn btn-primary">
+            Resume <span aria-hidden>↗</span>
+          </a>
+          <a href="#contact" className="btn btn-secondary">Contact</a>
+          {SOCIALS.filter((s) => !s.href.startsWith("mailto")).map((s) => (
+            <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="btn btn-ghost">
+              {s.label}
             </a>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.4}>
-          <div className="hero-socials">
-            {SOCIALS.map((s) => (
-              <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}>
-                {s.label}
-              </a>
-            ))}
-          </div>
-        </Reveal>
-      </div>
+          ))}
+        </div>
+      </Reveal>
     </section>
   )
 }
