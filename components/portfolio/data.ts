@@ -157,6 +157,9 @@ export const EXPERIENCE = [
       "Shipped a production LLM chatbot with prompt optimization & caching — −25% cloud costs.",
     ],
   },
+]
+
+export const EDUCATION = [
   {
     role: "B.Tech Information Technology",
     company: "College of Engineering Roorkee",

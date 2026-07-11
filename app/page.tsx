@@ -1,5 +1,6 @@
 import Hero from "@/components/portfolio/Hero"
 import Experience from "@/components/portfolio/Experience"
+import Education from "@/components/portfolio/Education"
 import Achievements from "@/components/portfolio/Achievements"
 import Projects from "@/components/portfolio/Projects"
 import GithubActivity from "@/components/portfolio/GithubActivity"
@@ -13,6 +14,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col bg-background pb-16">
         <Hero />
         <Experience />
+        <Education />
         <Projects />
         <GithubActivity />
         <Skills />
