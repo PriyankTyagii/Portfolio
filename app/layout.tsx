@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { DM_Sans, Inria_Serif } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
+import { SITE_URL } from '@/lib/site'
 import './globals.css'
 
 const dmSans = DM_Sans({
@@ -18,10 +19,14 @@ const inriaSerif = Inria_Serif({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'Priyank Tyagi | Developer',
   description:
     'Full-stack developer and AI engineer with experience in frontend, backend, and AI integrations.',
   generator: 'Next.js',
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
@@ -31,6 +36,12 @@ export const metadata: Metadata = {
     title: 'Priyank Tyagi | Developer',
     description: 'Full-stack developer and AI engineer with experience in frontend, backend, and AI integrations.',
     type: 'website',
+    url: SITE_URL,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Priyank Tyagi | Developer',
+    description: 'Full-stack developer and AI engineer with experience in frontend, backend, and AI integrations.',
   },
 }
 

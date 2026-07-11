@@ -9,6 +9,9 @@ import { PROJECTS } from "@/components/portfolio/data"
 export const metadata: Metadata = {
   title: "All Projects | Priyank Tyagi",
   description: "Everything I've shipped — full-stack apps, AI pipelines, and research prototypes.",
+  alternates: {
+    canonical: "/projects",
+  },
 }
 
 export default function AllProjectsPage() {
