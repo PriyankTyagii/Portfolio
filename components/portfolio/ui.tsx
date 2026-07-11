@@ -3,6 +3,110 @@
 import { useEffect, useRef, useState } from "react"
 import { motion, useInView, useMotionValue, useScroll, useSpring, useTransform, animate } from "framer-motion"
 
+/* ---------- Animated highlighter-marker text (criss-crossed ribbon strokes) ---------- */
+const HL_COLORS: Record<string, string> = {
+  rose: "#fb7185",
+  blue: "#60a5fa",
+}
+
+export function Highlight({
+  children,
+  color = "rose",
+  delay = 0,
+}: {
+  children: React.ReactNode
+  color?: "rose" | "blue"
+  delay?: number
+}) {
+  const c = HL_COLORS[color]
+  return (
+    <span className="relative inline-block whitespace-nowrap px-1">
+      <motion.span
+        aria-hidden
+        className="absolute -inset-x-1 top-1/2 -z-10 h-[55%] origin-left rounded-full"
+        style={{ background: c, opacity: 0.5, rotate: "-2.5deg" }}
+        initial={{ scaleX: 0, y: "-50%" }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.45, delay: 0.25 + delay, ease: [0.65, 0, 0.35, 1] }}
+      />
+      <motion.span
+        aria-hidden
+        className="absolute -inset-x-1 top-1/2 -z-10 h-[55%] origin-right rounded-full"
+        style={{ background: c, opacity: 0.35, rotate: "2.5deg" }}
+        initial={{ scaleX: 0, y: "-50%" }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.45, delay: 0.45 + delay, ease: [0.65, 0, 0.35, 1] }}
+      />
+      <span className="relative text-foreground font-semibold">{children}</span>
+    </span>
+  )
+}
+
+/* ---------- Shared logo/icon + title + meta row (Experience / Achievements) ---------- */
+export function EntryRow({
+  logo,
+  title,
+  href,
+  subtitle,
+  meta,
+  points,
+  desc,
+}: {
+  logo: React.ReactNode
+  title: string
+  href?: string
+  subtitle?: string
+  meta?: string
+  points?: string[]
+  desc?: string
+}) {
+  const TitleTag = href ? (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="group/link hover:underline inline-flex items-center gap-0.5 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors"
+    >
+      {title}
+      <span
+        aria-hidden
+        className="text-muted-foreground/50 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+      >
+        ↗
+      </span>
+    </a>
+  ) : (
+    title
+  )
+
+  return (
+    <div className="flex items-start gap-3 sm:gap-6">
+      <div className="relative flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl border border-border bg-white dark:bg-zinc-950 shadow-sm overflow-hidden">
+        {logo}
+      </div>
+      <div className="flex flex-1 flex-col gap-1.5">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+          <div>
+            <h3 className="font-semibold text-foreground text-base">{TitleTag}</h3>
+            {subtitle && <p className="text-sm text-muted-foreground font-medium">{subtitle}</p>}
+          </div>
+          {meta && <span className="text-xs text-muted-foreground/80 font-medium sm:text-right shrink-0">{meta}</span>}
+        </div>
+        {points && (
+          <ul className="list-disc pl-4 text-sm text-muted-foreground leading-relaxed space-y-1 mt-1">
+            {points.map((p, i) => (
+              <li key={i}>{p}</li>
+            ))}
+          </ul>
+        )}
+        {desc && <p className="text-sm text-muted-foreground leading-relaxed mt-1">{desc}</p>}
+      </div>
+    </div>
+  )
+}
+
 /* ---------- Scroll-linked parallax wrapper ---------- */
 export function Parallax({
   children,

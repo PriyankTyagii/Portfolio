@@ -7,11 +7,13 @@ export const SOCIALS = [
 
 export const PROFILE = {
   name: "Priyank Tyagi",
-  role: "Full-Stack & AI Engineer",
+  role: "Full-Stack Engineer • Builder",
+  greeting: "Hey, I'm",
+  headline: "I turn ideas into production-grade AI products — end to end.",
   location: "Roorkee, India",
   pronouns: "he/him",
   avatar: "https://github.com/PriyankTyagii.png",
-  bio: "I build production web apps and the AI systems behind them — LLM agents, RAG pipelines, and backends that hold up under real traffic. Currently shipping full-stack + AI products end to end: from typed Next.js frontends to FastAPI services, vector search, and cloud deploys.",
+  bio: "From typed Next.js frontends to FastAPI services, LLM agents, RAG pipelines, and cloud deploys — I own the whole stack and ship things people actually use. If it involves an idea becoming a working product, I'm probably having fun.",
 }
 
 export const PROFILE_STATS = [
@@ -20,30 +22,45 @@ export const PROFILE_STATS = [
   { label: "5+ products live", color: "#34d399" },
 ]
 
-/* Tinted chips — color per tech */
-export const TECH_STACK = [
-  { name: "TypeScript", color: "#60a5fa" },
-  { name: "Python", color: "#facc15" },
-  { name: "Next.js", color: "#f4f4f5" },
-  { name: "React", color: "#22d3ee" },
-  { name: "FastAPI", color: "#34d399" },
-  { name: "Node.js", color: "#4ade80" },
-  { name: "LangChain", color: "#c084fc" },
-  { name: "RAG / Vector DBs", color: "#f472b6" },
-  { name: "OpenAI API", color: "#38bdf8" },
-  { name: "HuggingFace", color: "#facc15" },
-  { name: "PyTorch", color: "#fb923c" },
-  { name: "TensorFlow", color: "#fb923c" },
-  { name: "PostgreSQL", color: "#60a5fa" },
-  { name: "MongoDB", color: "#4ade80" },
-  { name: "Redis", color: "#f87171" },
-  { name: "Firebase", color: "#facc15" },
-  { name: "Docker", color: "#38bdf8" },
-  { name: "Kubernetes", color: "#60a5fa" },
-  { name: "AWS", color: "#fb923c" },
-  { name: "GCP", color: "#34d399" },
-  { name: "GitHub Actions", color: "#a1a1aa" },
-  { name: "Tailwind CSS", color: "#22d3ee" },
+/* Tinted chips — grouped by domain, color per tech */
+export const TECH_GROUPS = [
+  {
+    label: "AI & Machine Learning",
+    items: [
+      { name: "LangChain", color: "#c084fc" },
+      { name: "RAG / Vector DBs", color: "#f472b6" },
+      { name: "OpenAI API", color: "#38bdf8" },
+      { name: "HuggingFace", color: "#facc15" },
+      { name: "PyTorch", color: "#fb923c" },
+      { name: "TensorFlow", color: "#fb923c" },
+    ],
+  },
+  {
+    label: "Languages & Frameworks",
+    items: [
+      { name: "TypeScript", color: "#60a5fa" },
+      { name: "Python", color: "#facc15" },
+      { name: "Next.js", color: "#f4f4f5" },
+      { name: "React", color: "#22d3ee" },
+      { name: "FastAPI", color: "#34d399" },
+      { name: "Node.js", color: "#4ade80" },
+      { name: "Tailwind CSS", color: "#22d3ee" },
+    ],
+  },
+  {
+    label: "Data, Cloud & DevOps",
+    items: [
+      { name: "PostgreSQL", color: "#60a5fa" },
+      { name: "MongoDB", color: "#4ade80" },
+      { name: "Redis", color: "#f87171" },
+      { name: "Firebase", color: "#facc15" },
+      { name: "Docker", color: "#38bdf8" },
+      { name: "Kubernetes", color: "#60a5fa" },
+      { name: "AWS", color: "#fb923c" },
+      { name: "GCP", color: "#34d399" },
+      { name: "GitHub Actions", color: "#a1a1aa" },
+    ],
+  },
 ]
 
 export const PROJECTS = [
@@ -56,6 +73,7 @@ export const PROJECTS = [
     github: "https://github.com/PriyankTyagii/AI-powered-customer-support-system",
     status: "Live",
     accent: "#34d399",
+    thumb: "/ai-customer-support-system.png" as string | null,
   },
   {
     index: "02",
@@ -65,6 +83,7 @@ export const PROJECTS = [
     link: "https://fashion-visual-search-intelligent-styling-assistant-priyank.streamlit.app/",
     status: "Live",
     accent: "#c084fc",
+    thumb: "/fashion-search-visual-engine.jpg" as string | null,
   },
   {
     index: "03",
@@ -74,6 +93,7 @@ export const PROJECTS = [
     link: "https://component-forge-beige.vercel.app",
     status: "Live",
     accent: "#22d3ee",
+    thumb: null as string | null,
   },
   {
     index: "04",
@@ -83,6 +103,7 @@ export const PROJECTS = [
     link: "https://events-platform-ruddy.vercel.app/",
     status: "Live",
     accent: "#facc15",
+    thumb: null as string | null,
   },
   {
     index: "05",
@@ -92,14 +113,19 @@ export const PROJECTS = [
     link: "https://github.com/PriyankTyagii",
     status: "Research",
     accent: "#f87171",
+    thumb: "/blockchain-network.png" as string | null,
   },
 ]
+
+export const GITHUB_USERNAME = "PriyankTyagii"
 
 export const EXPERIENCE = [
   {
     role: "Full Stack Developer",
     company: "AgroLogi Technologies",
+    logo: "/logos/agrologi.png",
     location: "Remote",
+    accent: "#34d399",
     period: "Sept 2025 — Feb 2026",
     points: [
       "Built a FastAPI + Firebase + ResNet50 pipeline processing 10K+ crop images/day — +25% accuracy, −35% latency.",
@@ -110,7 +136,9 @@ export const EXPERIENCE = [
   {
     role: "Research Intern",
     company: "IIT Roorkee",
+    logo: "/logos/iit-roorkee.svg",
     location: "On-site",
+    accent: "#60a5fa",
     period: "Apr 2025 — Sept 2025",
     points: [
       "Built an AI-powered blockchain consensus layer with ML-based validator selection — +30% throughput, −20% latency.",
@@ -120,7 +148,9 @@ export const EXPERIENCE = [
   {
     role: "AI & Cloud Intern",
     company: "Edunet Foundation · IBM SkillsBuild",
+    logo: "/logos/edunet-foundation.png",
     location: "Remote",
+    accent: "#c084fc",
     period: "July — Aug 2024",
     points: [
       "Built ML pipelines on IBM Cloud — 10K+ samples at 92% accuracy, −35% training time.",
@@ -130,7 +160,9 @@ export const EXPERIENCE = [
   {
     role: "B.Tech Information Technology",
     company: "College of Engineering Roorkee",
+    logo: "/logos/coer.jpg",
     location: "Roorkee",
+    accent: "#facc15",
     period: "Expected May 2026",
     points: [
       "CGPA 7.8 / 10 — coursework in DSA, OS, DBMS, Computer Networks, Machine Learning.",
@@ -139,11 +171,11 @@ export const EXPERIENCE = [
 ]
 
 export const WINS = [
-  { icon: "🏆", title: "IIT InnoWave", desc: "Winner — national innovation competition at IIT for an AI-powered solution." },
-  { icon: "🎯", title: "10+ Hackathon Wins", desc: "National & international — incl. 2nd place AlgoVerse (Microsoft × HackWithIndia)." },
-  { icon: "📜", title: "2 Patents Filed", desc: "AI and IoT innovations under review at the Indian Patent Office." },
-  { icon: "🌟", title: "Google Gemini Ambassador", desc: "Top 0.003% of 30,000+ applicants as Campus Ambassador." },
-  { icon: "☁️", title: "GCP Arcade Champion", desc: "Top performer in Google Cloud competitive skill challenges." },
+  { icon: "trophy", accent: "#facc15", title: "IIT InnoWave", desc: "Winner — national innovation competition at IIT for an AI-powered solution." },
+  { icon: "target", accent: "#f87171", title: "10+ Hackathon Wins", desc: "National & international — incl. 2nd place AlgoVerse (Microsoft × HackWithIndia)." },
+  { icon: "scroll", accent: "#c084fc", title: "2 Patents Filed", desc: "AI and IoT innovations under review at the Indian Patent Office." },
+  { icon: "sparkles", accent: "#38bdf8", title: "Google Gemini Ambassador", desc: "Top 0.003% of 30,000+ applicants as Campus Ambassador." },
+  { icon: "cloud", accent: "#34d399", title: "GCP Arcade Champion", desc: "Top performer in Google Cloud competitive skill challenges." },
 ]
 
 export const CERTIFICATIONS = [

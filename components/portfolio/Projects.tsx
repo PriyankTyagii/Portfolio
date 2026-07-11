@@ -1,52 +1,41 @@
 "use client"
 
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 import { Reveal } from "./ui"
+import ProjectCard from "./ProjectCard"
 import { PROJECTS } from "./data"
 
 export default function Projects() {
+  const featured = PROJECTS.slice(0, 2)
+
   return (
-    <section className="section" id="projects">
-      <Reveal y={18}>
-        <h2 className="sec-title">Featured Projects</h2>
-      </Reveal>
+    <Reveal y={-6}>
+      <section
+        className="max-w-3xl mx-auto px-6 w-full py-8 md:py-10 flex flex-col gap-6 border-t border-border"
+        id="projects"
+      >
+        <div className="flex flex-col gap-1.5">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground font-heading">Featured Projects</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            A few things I&apos;ve shipped — most are live, go break them.
+          </p>
+        </div>
 
-      <div className="projects-list">
-        {PROJECTS.map((p, i) => (
-          <Reveal key={p.name} y={20} delay={0.04 * (i % 3)}>
-            <div
-              className="project-card"
-              style={{ "--project-accent": p.accent } as React.CSSProperties}
-            >
-              <div className="project-head">
-                <span className="project-name">{p.name}</span>
-                <span className="project-status">
-                  <span className="project-status-dot" />
-                  {p.status}
-                </span>
-              </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 mt-2">
+          {featured.map((p) => (
+            <ProjectCard key={p.name} p={p} />
+          ))}
+        </div>
 
-              <p className="project-desc">{p.desc}</p>
-
-              <div className="project-tags">
-                {p.tags.map((t) => (
-                  <span key={t} className="tag">{t}</span>
-                ))}
-              </div>
-
-              <div className="project-links">
-                <a href={p.link} target="_blank" rel="noreferrer" className="project-link">
-                  view ↗
-                </a>
-                {"github" in p && p.github && (
-                  <a href={p.github} target="_blank" rel="noreferrer" className="project-link">
-                    github ↗
-                  </a>
-                )}
-              </div>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </section>
+        <Link
+          href="/projects"
+          className="group/see inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:underline w-fit"
+        >
+          See all projects
+          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/see:translate-x-0.5" />
+        </Link>
+      </section>
+    </Reveal>
   )
 }

@@ -1,79 +1,40 @@
 "use client"
 
-import { Reveal } from "./ui"
-import { PROFILE, PROFILE_STATS, SOCIALS, EMAIL, SITE } from "./data"
+import { Reveal, Highlight } from "./ui"
+import { PROFILE } from "./data"
 
 export default function Hero() {
   return (
-    <section className="profile" id="top">
-      <Reveal y={20}>
-        <div className="profile-top">
+    <Reveal y={-6}>
+      <section
+        className="max-w-3xl mx-auto px-6 w-full py-8 md:py-10 flex flex-col gap-6 pt-16 md:pt-20"
+        id="hero"
+      >
+        <div className="flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-2">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl font-heading">
+              {PROFILE.name}
+            </h1>
+            <p className="text-lg font-medium text-muted-foreground">{PROFILE.role}</p>
+          </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={PROFILE.avatar} alt={PROFILE.name} className="avatar" />
-          <div className="profile-id">
-            <div className="available">
-              <span className="available-dot" />
-              Available for work
-            </div>
-            <h1 className="profile-name">{PROFILE.name}</h1>
-            <div className="profile-role">{PROFILE.role}</div>
-          </div>
+          <img
+            src={PROFILE.avatar}
+            alt={PROFILE.name}
+            className="relative h-24 w-24 overflow-hidden rounded-full border border-border shadow-sm object-cover"
+          />
         </div>
-      </Reveal>
 
-      <Reveal y={16} delay={0.08}>
-        <div className="profile-meta">
-          <div className="profile-meta-row">
-            <span className="key" aria-hidden>◆</span> {PROFILE.location} · {PROFILE.pronouns}
-          </div>
-          <div className="profile-meta-row">
-            <span className="key" aria-hidden>@</span>
-            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-          </div>
-          <div className="profile-meta-row">
-            <span className="key" aria-hidden>↗</span>
-            <a href="/" aria-label="Website">{SITE}</a>
-          </div>
-        </div>
-      </Reveal>
-
-      <Reveal y={16} delay={0.16}>
-        <p className="profile-bio">
-          {PROFILE.bio}
+        <p className="text-sm leading-relaxed text-muted-foreground sm:text-lg max-w-xl">
+          I am a <Highlight color="rose">full-stack developer</Highlight> and{" "}
+          <Highlight color="blue" delay={0.15}>
+            AI engineer
+          </Highlight>{" "}
+          with experience on Next.js/React frontends, FastAPI backends, LLM agents, and RAG
+          pipelines. I also have experience building voice AI pipelines, developer tools, and
+          contributing to open-source projects.
         </p>
-      </Reveal>
-
-      <Reveal y={16} delay={0.24}>
-        <div className="profile-stats">
-          {PROFILE_STATS.map((s) => (
-            <span
-              key={s.label}
-              className="pstat"
-              style={{
-                color: s.color,
-                borderColor: `${s.color}38`,
-                background: `${s.color}12`,
-              }}
-            >
-              {s.label}
-            </span>
-          ))}
-        </div>
-      </Reveal>
-
-      <Reveal y={16} delay={0.32}>
-        <div className="profile-actions">
-          <a href="/resume.pdf" target="_blank" rel="noreferrer" className="btn btn-primary">
-            Resume <span aria-hidden>↗</span>
-          </a>
-          <a href="#contact" className="btn btn-secondary">Contact</a>
-          {SOCIALS.filter((s) => !s.href.startsWith("mailto")).map((s) => (
-            <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="btn btn-ghost">
-              {s.label}
-            </a>
-          ))}
-        </div>
-      </Reveal>
-    </section>
+      </section>
+    </Reveal>
   )
 }

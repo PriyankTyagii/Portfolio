@@ -1,35 +1,40 @@
-import Navbar from "@/components/portfolio/Navbar"
 import Hero from "@/components/portfolio/Hero"
-import Skills from "@/components/portfolio/Skills"
 import Experience from "@/components/portfolio/Experience"
-import Projects from "@/components/portfolio/Projects"
 import Achievements from "@/components/portfolio/Achievements"
+import Projects from "@/components/portfolio/Projects"
+import GithubActivity from "@/components/portfolio/GithubActivity"
+import Skills from "@/components/portfolio/Skills"
 import Contact from "@/components/portfolio/Contact"
+import Dock from "@/components/portfolio/Dock"
 
 export default function Home() {
   return (
     <>
-      <div className="bg-dots" aria-hidden />
-      <Navbar />
-      <main className="wrap">
+      <main className="flex min-h-screen flex-col bg-background pb-16">
         <Hero />
-        <Skills />
         <Experience />
         <Projects />
+        <GithubActivity />
+        <Skills />
         <Achievements />
         <Contact />
-      </main>
-      <footer className="site-footer">
-        <div className="footer-inner">
-          <p className="footer-copy">© {new Date().getFullYear()} Priyank Tyagi · built with Next.js</p>
-          <div className="footer-links">
-            <a href="https://github.com/PriyankTyagii" target="_blank" rel="noreferrer">github</a>
-            <a href="https://www.linkedin.com/in/priyank-tyagi-3a3a10259/" target="_blank" rel="noreferrer">linkedin</a>
-            <a href="/resume.pdf" target="_blank" rel="noreferrer">resume</a>
-            <a href="#top">top ↑</a>
+
+        <section className="max-w-3xl mx-auto px-6 w-full py-8 flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-border text-xs text-muted-foreground">
+          <div>© {new Date().getFullYear()} Priyank Tyagi. All rights reserved.</div>
+          <div className="flex gap-4">
+            <a href="https://github.com/PriyankTyagii" target="_blank" rel="noreferrer" className="hover:underline hover:text-foreground transition-colors">
+              github
+            </a>
+            <a href="https://www.linkedin.com/in/priyank-tyagi-3a3a10259/" target="_blank" rel="noreferrer" className="hover:underline hover:text-foreground transition-colors">
+              linkedin
+            </a>
+            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="hover:underline hover:text-foreground transition-colors">
+              resume
+            </a>
           </div>
-        </div>
-      </footer>
+        </section>
+      </main>
+      <Dock />
     </>
   )
 }

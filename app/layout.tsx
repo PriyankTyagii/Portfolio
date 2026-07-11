@@ -1,37 +1,52 @@
 import type { Metadata } from 'next'
-import { JetBrains_Mono } from 'next/font/google'
+import { DM_Sans, Inria_Serif } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
-const jetbrains = JetBrains_Mono({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-mono',
+  variable: '--font-dm-sans',
+  display: 'swap',
+})
+
+const inriaSerif = Inria_Serif({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  variable: '--font-inria-serif',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Priyank Tyagi — Full-Stack & AI Engineer',
+  title: 'Priyank Tyagi | Developer',
   description:
-    'Portfolio of Priyank Tyagi — full-stack & AI engineer. Production web apps, LLM agents, RAG pipelines. 10+ hackathon wins, 2 patents filed.',
+    'Full-stack developer and AI engineer with experience in frontend, backend, and AI integrations.',
   generator: 'Next.js',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
-    title: 'Priyank Tyagi — Full-Stack & AI Engineer',
-    description: 'Production web apps, LLM agents, and RAG pipelines. Explore projects, experience, and wins.',
+    title: 'Priyank Tyagi | Developer',
+    description: 'Full-stack developer and AI engineer with experience in frontend, backend, and AI integrations.',
     type: 'website',
   },
 }
 
 export const viewport = {
-  themeColor: '#09090b',
+  themeColor: '#0a0a0a',
 }
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={jetbrains.variable}>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${dmSans.variable} ${inriaSerif.variable} font-sans antialiased bg-background text-foreground`}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
