@@ -129,6 +129,17 @@ export const PROJECTS = [
     accent: "#2dd4bf",
     thumb: null as string | null,
   },
+  {
+    index: "07",
+    name: "Spacioo",
+    desc: "Cross-platform disk cleaner that finds junk files, duplicates, and stale documents entirely on-device — OCR-powered categorization with zero cloud uploads.",
+    tags: ["Electron", "Python", "OCR", "Privacy-first"],
+    link: "https://spacioo.netlify.app/",
+    github: "https://github.com/PriyankTyagii/Spacioo",
+    status: "Live",
+    accent: "#818cf8",
+    thumb: "/spacioo.png" as string | null,
+  },
 ]
 
 export const GITHUB_USERNAME = "PriyankTyagii"
