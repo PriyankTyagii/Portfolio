@@ -93,7 +93,7 @@ export const PROJECTS = [
     link: "https://component-forge-beige.vercel.app",
     status: "Live",
     accent: "#22d3ee",
-    thumb: null as string | null,
+    thumb: "/componentforge.png" as string | null,
   },
   {
     index: "04",
@@ -103,7 +103,7 @@ export const PROJECTS = [
     link: "https://events-platform-ruddy.vercel.app/",
     status: "Live",
     accent: "#facc15",
-    thumb: null as string | null,
+    thumb: "/events-platform.png" as string | null,
   },
   {
     index: "05",
