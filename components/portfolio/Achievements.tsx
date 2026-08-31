@@ -1,6 +1,6 @@
 "use client"
 
-import { Trophy, Target, ScrollText, Sparkles, Cloud, Check, type LucideIcon } from "lucide-react"
+import { Trophy, Target, ScrollText, Sparkles, Cloud, Lightbulb, Check, type LucideIcon } from "lucide-react"
 import { Reveal, EntryRow } from "./ui"
 import { WINS, CERTIFICATIONS, LINKEDIN_CERTS_URL } from "./data"
 
@@ -10,6 +10,7 @@ const WIN_ICONS: Record<string, LucideIcon> = {
   scroll: ScrollText,
   sparkles: Sparkles,
   cloud: Cloud,
+  lightbulb: Lightbulb,
 }
 
 export default function Achievements() {
@@ -24,19 +25,26 @@ export default function Achievements() {
           <div className="flex flex-col gap-6">
             {WINS.map((w) => {
               const Icon = WIN_ICONS[w.icon]
+              const image = "image" in w ? w.image : undefined
               return (
                 <EntryRow
                   key={w.title}
                   logo={
-                    <div
-                      className="flex h-full w-full items-center justify-center"
-                      style={{ background: `${w.accent}1a` }}
-                      aria-hidden
-                    >
-                      <Icon className="h-5 w-5" style={{ color: w.accent }} />
-                    </div>
+                    image ? (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img src={image} alt="" loading="lazy" className="h-full w-full object-contain p-1.5" aria-hidden />
+                    ) : (
+                      <div
+                        className="flex h-full w-full items-center justify-center"
+                        style={{ background: `${w.accent}1a` }}
+                        aria-hidden
+                      >
+                        <Icon className="h-5 w-5" style={{ color: w.accent }} />
+                      </div>
+                    )
                   }
                   title={w.title}
+                  href={w.href}
                   desc={w.desc}
                 />
               )

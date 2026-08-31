@@ -204,6 +204,22 @@ export const WINS = [
   { icon: "scroll", accent: "#c084fc", title: "2 Patents Filed", desc: "AI and IoT innovations under review at the Indian Patent Office." },
   { icon: "sparkles", accent: "#38bdf8", title: "Google Gemini Ambassador", desc: "Top 0.003% of 30,000+ applicants as Campus Ambassador." },
   { icon: "cloud", accent: "#34d399", title: "GCP Arcade Champion", desc: "Top performer in Google Cloud competitive skill challenges." },
+  {
+    icon: "lightbulb",
+    image: "/matkacool.webp",
+    accent: "#fb923c",
+    title: "MatkaCool",
+    desc: "Instructables contest winner — the 5,000-year-old evaporative cooler, rebooted.",
+    href: "https://www.instructables.com/MatkaCool-the-5000-Year-Old-Air-Conditioner-Reboot",
+  },
+  {
+    icon: "lightbulb",
+    image: "/pocketpill.webp",
+    accent: "#fb923c",
+    title: "PocketPill",
+    desc: "Instructables contest winner — a pocket-size smart pillbox that blinks to remind you.",
+    href: "https://www.instructables.com/PocketPill-a-Pocket-Size-Smart-Pillbox-That-Blinks",
+  },
 ]
 
 export const CERTIFICATIONS = [
