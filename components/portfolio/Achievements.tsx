@@ -1,6 +1,6 @@
 "use client"
 
-import { Trophy, Target, ScrollText, Sparkles, Cloud, Lightbulb, Check, type LucideIcon } from "lucide-react"
+import { Trophy, Target, ScrollText, Lightbulb, Check, type LucideIcon } from "lucide-react"
 import { Reveal, EntryRow } from "./ui"
 import { WINS, CERTIFICATIONS, LINKEDIN_CERTS_URL } from "./data"
 
@@ -8,8 +8,6 @@ const WIN_ICONS: Record<string, LucideIcon> = {
   trophy: Trophy,
   target: Target,
   scroll: ScrollText,
-  sparkles: Sparkles,
-  cloud: Cloud,
   lightbulb: Lightbulb,
 }
 

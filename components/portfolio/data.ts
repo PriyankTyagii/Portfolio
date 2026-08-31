@@ -202,8 +202,8 @@ export const WINS = [
   { icon: "trophy", accent: "#facc15", title: "IIT InnoWave", desc: "Winner — national innovation competition at IIT for an AI-powered solution." },
   { icon: "target", accent: "#f87171", title: "10+ Hackathon Wins", desc: "National & international — incl. 2nd place AlgoVerse (Microsoft × HackWithIndia)." },
   { icon: "scroll", accent: "#c084fc", title: "2 Patents Filed", desc: "AI and IoT innovations under review at the Indian Patent Office." },
-  { icon: "sparkles", accent: "#38bdf8", title: "Google Gemini Ambassador", desc: "Top 0.003% of 30,000+ applicants as Campus Ambassador." },
-  { icon: "cloud", accent: "#34d399", title: "GCP Arcade Champion", desc: "Top performer in Google Cloud competitive skill challenges." },
+  { icon: "lightbulb", image: "/google-gemini.svg", accent: "#4285F4", title: "Google Gemini Ambassador", desc: "Top 0.003% of 30,000+ applicants as Campus Ambassador." },
+  { icon: "lightbulb", image: "/google-cloud.svg", accent: "#4285F4", title: "GCP Arcade Champion", desc: "Top performer in Google Cloud competitive skill challenges." },
   {
     icon: "lightbulb",
     image: "/matkacool.webp",
