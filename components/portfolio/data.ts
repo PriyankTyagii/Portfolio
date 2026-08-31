@@ -118,6 +118,17 @@ export const PROJECTS = [
     accent: "#f87171",
     thumb: "/blockchain-network.png" as string | null,
   },
+  {
+    index: "06",
+    name: "AI Assessment Creator",
+    desc: "AI-powered exam paper generator for teachers — a form kicks off a background job that calls Groq, validates the structured output, and streams progress over WebSocket to a downloadable PDF.",
+    tags: ["Next.js", "Express", "BullMQ", "Groq"],
+    link: "https://ai-assessment-creator-tau.vercel.app/",
+    github: "https://github.com/PriyankTyagii/AI-Assessment-Creator",
+    status: "Live",
+    accent: "#2dd4bf",
+    thumb: null as string | null,
+  },
 ]
 
 export const GITHUB_USERNAME = "PriyankTyagii"
