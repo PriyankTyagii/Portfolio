@@ -89,6 +89,15 @@ body {
   }
 }
 
+/* ---------- hide scrollbar on horizontal carousels ---------- */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* ---------- toolkit marquee ---------- */
 @keyframes marquee {
   from {
