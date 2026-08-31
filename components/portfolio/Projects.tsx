@@ -30,7 +30,7 @@ export default function Projects() {
 
         <Link
           href="/projects"
-          className="group/see inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:underline w-fit"
+          className="group/see inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-foreground text-background px-4 py-2 text-sm font-semibold shadow-sm transition-opacity hover:opacity-90 w-fit"
         >
           See all projects
           <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/see:translate-x-0.5" />
